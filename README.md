@@ -23,7 +23,7 @@ view images of the parking lots captured by the cameras using Computer Vision an
 ## Solution
 * This solution treats the problem as an instance segmentation problem to identify cars from an image of a parking lot 
 and infer empty parking spots in the image.
-* This system uses deep learning model Mask R-CNN which is pre-trained on MS-COCO dataset and is used for identification 
+* This system uses deep learning model [Mask R-CNN](https://github.com/matterport/Mask_RCNN) which is pre-trained on MS-COCO dataset and is used for identification 
 of cars and subsequently, parking spots in the input images. 
 * The first part of the problem is to identify all parking spaces in a parking lot from the camera images.
 * The second part works on detecting empty parking spaces from a new image input to the system using locations 
