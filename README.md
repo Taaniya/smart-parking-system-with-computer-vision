@@ -29,4 +29,5 @@ of cars and subsequently, parking spots in the input images.
 * The second part works on detecting empty parking spaces from a new image input to the system using locations 
 of parking spaces identified in the previous phase.
 
+![](/images/solution_methodology.PNG)
 
