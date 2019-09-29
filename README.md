@@ -82,6 +82,7 @@ For an image of a parking area, the model returns 4 things -
     The spots where cars were identified are displayed in red colour bounding box and centre points 
     and green colour for the rest of the spots. 
 
+![](/images/prototype_demo.PNG)
 
 ### Approach
 
