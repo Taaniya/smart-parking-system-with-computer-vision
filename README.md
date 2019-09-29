@@ -83,6 +83,18 @@ For an image of a parking area, the model returns 4 things -
     and green colour for the rest of the spots. 
 
 
+### Approach
+
+#### 1. To find empty/available parking space from the input images of parking area, we divide the problem statement into two parts-
+
+* To obtain locations of parking spots in the images i.e which areas of the image correspond to parking  spots. These locations will be used for subsequent images in the 3rd step. 
+* For new input images, identify car instances and their locations in the parking lot and determine the occupancy using the reference locations as described in previous sections.
+
+ Advantages – 
+This eliminates any dependency of the model on a human to provide hard coded locations of parking spots.
+Enables the system to identify empty parking spots for new parking lots as well with minimal requirement of a single image of its completely occupied parking area without any compromise on its performance. 
+
+Treating bounding boxes of parked cars as valid parking spot is more reliable and easier to detect than detecting parking meters or vehicle boundaries in the parking spaces as neither of them are always visible and may also be confused with noise by the model and hence detecting such objects do not promise reliable results every time for different areas. 
 
 
 ### References 
