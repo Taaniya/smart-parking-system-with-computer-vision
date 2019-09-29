@@ -62,10 +62,12 @@ For an image of a parking area, the model returns 4 things -
 * For any subsequent image, after the inference step, bounding box for cars in the image are obtained. 
      This time, the image will contain bounding boxes wherever car objects have been identified. 
 * To determine empty parking spots, we use a measure IOU (Intersection over Union). 
-  	IOU =  $\frac{\text{Amount  of  pixels where 2 objects overlap}}{\text{Amount of pixels covered by both objects}}$
+  	
+	IOU =  $\frac{\text{Amount  of  pixels where 2 objects overlap}}{\text{Amount of pixels covered by both objects}}$
 		
     or 
-                 
+        
+	
     IOU = $\frac{\text{Intersection of boxes}}{\text{union of boxes}}$
     
     
