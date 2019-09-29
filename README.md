@@ -33,7 +33,7 @@ of parking spaces identified in the previous phase.
 
 
 ### Training data
- The instance segmentation model used in this solution is Mask R-CNN detector,pre-trained on MS-COCO dataset. 
+ The instance segmentation model used in this solution is [Mask R-CNN](https://github.com/matterport/Mask_RCNN) detector,pre-trained on MS-COCO dataset. 
  This dataset is designed for the detection and segmentation of objects occurring in their natural context and has more than 200K labelled images. This dataset has more than 80 object categories including capability to identify car in an image. 
  
  
@@ -91,10 +91,10 @@ For an image of a parking area, the model returns 4 things -
 * For new input images, identify car instances and their locations in the parking lot and determine the occupancy using the reference locations as described in previous sections.
 
  Advantages – 
-This eliminates any dependency of the model on a human to provide hard coded locations of parking spots.
-Enables the system to identify empty parking spots for new parking lots as well with minimal requirement of a single image of its completely occupied parking area without any compromise on its performance. 
+* This eliminates any dependency of the model on a human to provide hard coded locations of parking spots.
+* Enables the system to identify empty parking spots for new parking lots as well with minimal requirement of a single image of its completely occupied parking area without any compromise on its performance. 
+* Treating bounding boxes of parked cars as valid parking spot is more reliable and easier to detect than detecting parking meters or vehicle boundaries in the parking spaces as neither of them are always visible and may also be confused with noise by the model and hence detecting such objects do not promise reliable results every time for different areas. 
 
-Treating bounding boxes of parked cars as valid parking spot is more reliable and easier to detect than detecting parking meters or vehicle boundaries in the parking spaces as neither of them are always visible and may also be confused with noise by the model and hence detecting such objects do not promise reliable results every time for different areas. 
 
 
 ### References 
