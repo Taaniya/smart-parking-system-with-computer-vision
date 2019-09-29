@@ -65,12 +65,9 @@ For an image of a parking area, the model returns 4 things -
   	
 	<a href="https://www.codecogs.com/eqnedit.php?latex=IOU=\frac{\text{Amount&space;of&space;pixels&space;where&space;2&space;objects&space;overlap}}{\text{Amount&space;of&space;pixels&space;covered&space;by&space;both&space;objects}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?IOU=\frac{\text{Amount&space;of&space;pixels&space;where&space;2&space;objects&space;overlap}}{\text{Amount&space;of&space;pixels&space;covered&space;by&space;both&space;objects}}" title="IOU=\frac{\text{Amount of pixels where 2 objects overlap}}{\text{Amount of pixels covered by both objects}}" /></a>
 	
-	IOU=$\frac{\text{Amount of pixels where 2 objects overlap}}{\text{Amount of pixels covered by both objects}}$
-		
     or 
-        
-	
-    IOU = $\frac{\text{Intersection of boxes}}{\text{union of boxes}}$
+        	
+    <a href="https://www.codecogs.com/eqnedit.php?latex=IOU=\frac{\text{Intersection&space;of&space;boxes}}{\text{union&space;of&space;boxes}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?IOU=\frac{\text{Intersection&space;of&space;boxes}}{\text{union&space;of&space;boxes}}" title="IOU=\frac{\text{Intersection of boxes}}{\text{union of boxes}}" /></a>
     
     
    This gives us a measure of overlap of a car’s bounding box with the parking spot’s bounding box. 
