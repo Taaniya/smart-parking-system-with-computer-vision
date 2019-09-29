@@ -63,6 +63,8 @@ For an image of a parking area, the model returns 4 things -
      This time, the image will contain bounding boxes wherever car objects have been identified. 
 * To determine empty parking spots, we use a measure IOU (Intersection over Union). 
   	
+	<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+	
 	IOU =  $\frac{\text{Amount  of  pixels where 2 objects overlap}}{\text{Amount of pixels covered by both objects}}$
 		
     or 
