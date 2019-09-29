@@ -86,7 +86,7 @@ For an image of a parking area, the model returns 4 things -
 
 ### Approach
 
-#### 1. To find empty/available parking space from the input images of parking area, we divide the problem statement into two parts-
+#### To find empty/available parking space from the input images of parking area, we divide the problem statement into two parts-
 
 * To obtain locations of parking spots in the images i.e which areas of the image correspond to parking  spots. These locations will be used for subsequent images in the 3rd step. 
 * For new input images, identify car instances and their locations in the parking lot and determine the occupancy using the reference locations as described in previous sections.
