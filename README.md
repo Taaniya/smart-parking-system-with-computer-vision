@@ -31,3 +31,59 @@ of parking spaces identified in the previous phase.
 
 ![](/images/solution_methodology.PNG)
 
+
+### Training data
+ The instance segmentation model used in this solution is Mask R-CNN detector,pre-trained on MS-COCO dataset. 
+ This dataset is designed for the detection and segmentation of objects occurring in their natural context and has more than 200K labelled images. This dataset has more than 80 object categories including capability to identify car in an image. 
+ 
+ 
+Data used in this solution is [CNR Car parking dataset](http://www.cnrpark.it/) (CNR-EXT_FULL_IMAGE_1000x750) for solution demonstration.
+This dataset is for visual occupancy of car parking lots and contains images captured in 3 different weather conditions : rainy, overcast & sunny. This variant of the dataset contains full frames (complete view of the parking lot) similar to the kind of input for the problem statement at hand.
+
+Resolution – 1000x750 
+
+### Parking spaces identification and car object identification with Mask R-CNN model - 
+In this solution, Mask R-CNN model is used for identifying cars in the images. 
+This model is designed for object instance segmentation and is an extension to Faster R-CNN model. 
+For an image of a parking area, the model returns 4 things - 
+* The bounding boxes of each object identified, as X,Y pixel coordinates.
+* The class label for the object, one of 80 categories as supported by COCO dataset.
+* Confidence score of object detection. Higher value denotes more certainty of object’s correct identification. 
+* A bitmap mask telling which pixels within the bounding box belong to the object and which ones do not. This result is filtered to obtain this information for objects identified as ‘car’. 
+
+
+### Flow of the system
+* An image of completely occupied parking area is first input to this system. 
+* The inference step from object instance identification returns bounding boxes of all the cars. 
+     The location of each car is treated as a valid parking spot and bounding box of all of these spots are     
+       maintained in the system. The coordinate locations of these  boxes are only needed to be stored for 
+       the first time an image from a new parking lot is input to the system. These locations are used for 
+       reference for subsequent images passed as input to determine occupancy of parking spots. 
+* For any subsequent image, after the inference step, bounding box for cars in the image are obtained. 
+     This time, the image will contain bounding boxes wherever car objects have been identified. 
+* To determine empty parking spots, we use a measure IOU (Intersection over Union). 
+  	IOU =  $\frac{\text{Amount  of  pixels where 2 objects overlap}}{\text{Amount of pixels covered by both objects}}$
+		
+    or 
+                 
+    IOU = $\frac{\text{Intersection of boxes}}{\text{union of boxes}}$
+    
+    
+   This gives us a measure of overlap of a car’s bounding box with the parking spot’s bounding box. 
+   A value greater than a threshold ( threshold here 0.5 ) denotes that the spot is occupied, otherwise vacant. 
+   For any new image of a parking area with few spots vacant, the image after the instance detection stage    
+   will only have bounding boxes at locations where cars were identified and hence, IOU value for those   
+   locations will be > 0.5 (denoting occupied) and 0 (denoting empty) for the rest of the locations in the  
+   reference coordinate locations. 
+   
+* To depict the output, all the bounding boxes and their centre locations from the reference     
+     parking spot locations are overlayed on the current input image. 
+    The spots where cars were identified are displayed in red colour bounding box and centre points 
+    and green colour for the rest of the spots. 
+
+
+
+
+### References 
+* [Snagging Parking Spaces with Mask R-CNN and Python](https://medium.com/@ageitgey/snagging-parking-spaces-with-mask-r-cnn-and-python-955f2231c400)
+
