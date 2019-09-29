@@ -100,4 +100,4 @@ For an image of a parking area, the model returns 4 things -
 
 ### References 
 * [Snagging Parking Spaces with Mask R-CNN and Python](https://medium.com/@ageitgey/snagging-parking-spaces-with-mask-r-cnn-and-python-955f2231c400)
-
+* [Mask R-CNN paper](https://arxiv.org/abs/1703.06870)
